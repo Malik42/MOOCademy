@@ -1,0 +1,652 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (79.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (75.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCour Load (0.5ms)[0m  [1m[34mSELECT "cours".* FROM "cours"[0m
+  [1m[36mCour Load (1.3ms)[0m  [1m[34mSELECT "cours".* FROM "cours"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCour Load (0.7ms)[0m  [1m[34mSELECT "cours".* FROM "cours"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCours (20190130204754)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190130204754_create_cours.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "cours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130204754_create_cours.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130204754"]]
+  ↳ bin/rails:9
+  [1m[35m (70.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateLecons (20190130204807)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cour_id" integer, "title" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190130204807_create_lecons.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cour_id" ON "lecons" ("cour_id")[0m
+  ↳ db/migrate/20190130204807_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190130204807"]]
+  ↳ bin/rails:9
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-30 21:53:09.414808"], ["updated_at", "2019-01-30 21:53:09.414808"]]
+  ↳ bin/rails:9
+  [1m[35m (44.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.2ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Technology Producer"], ["description", "Ipsa est quo. Ab nihil cumque. Unde earum magni."], ["created_at", "2019-01-30 21:53:15.480257"], ["updated_at", "2019-01-30 21:53:15.480257"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (72.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.5ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Corporate Technology Representative"], ["description", "Hic fugiat reprehenderit. Similique repudiandae ut. Quasi eos delectus."], ["created_at", "2019-01-30 21:53:15.558106"], ["updated_at", "2019-01-30 21:53:15.558106"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Legal Administrator"], ["description", "Sed autem dolorum. Asperiores occaecati optio. Aut sint aut."], ["created_at", "2019-01-30 21:53:15.626129"], ["updated_at", "2019-01-30 21:53:15.626129"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (62.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Real-Estate Administrator"], ["description", "Itaque ut vitae. Cumque culpa blanditiis. Hic voluptatem explicabo."], ["created_at", "2019-01-30 21:53:15.696100"], ["updated_at", "2019-01-30 21:53:15.696100"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (168.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.3ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Principal Construction Coordinator"], ["description", "Nobis aut consequatur. Facilis asperiores dignissimos. Consequuntur tenetur dolores."], ["created_at", "2019-01-30 21:53:15.871590"], ["updated_at", "2019-01-30 21:53:15.871590"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.1ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Central Producer"], ["description", "Eum maiores excepturi. Dolores amet aut. Explicabo perferendis sint."], ["created_at", "2019-01-30 21:53:15.923647"], ["updated_at", "2019-01-30 21:53:15.923647"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Administration Engineer"], ["description", "Blanditiis facere libero. Illo ea veniam. Quos dolores sint."], ["created_at", "2019-01-30 21:53:15.979555"], ["updated_at", "2019-01-30 21:53:15.979555"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Legal Officer"], ["description", "Natus reiciendis laudantium. Fugiat voluptatem fugit. Quam laudantium velit."], ["created_at", "2019-01-30 21:53:16.046616"], ["updated_at", "2019-01-30 21:53:16.046616"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Marketing Planner"], ["description", "Exercitationem reiciendis et. Ut deleniti neque. Et beatae rem."], ["created_at", "2019-01-30 21:53:16.105463"], ["updated_at", "2019-01-30 21:53:16.105463"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Construction Analyst"], ["description", "Aut amet ad. Nihil dolorem fugit. Facere placeat consequatur."], ["created_at", "2019-01-30 21:53:16.161876"], ["updated_at", "2019-01-30 21:53:16.161876"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Investor Manufacturing Liaison"], ["description", "Dolorum fugiat suscipit. Magnam molestiae dolor. Incidunt sed eum."], ["created_at", "2019-01-30 21:53:16.239739"], ["updated_at", "2019-01-30 21:53:16.239739"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "International Design Manager"], ["description", "Aspernatur qui id. Accusantium facere voluptatem. Sed consequuntur dignissimos."], ["created_at", "2019-01-30 21:53:16.319179"], ["updated_at", "2019-01-30 21:53:16.319179"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Healthcare Representative"], ["description", "Sequi quo illum. Delectus voluptas ut. Omnis dolorum et."], ["created_at", "2019-01-30 21:53:16.374416"], ["updated_at", "2019-01-30 21:53:16.374416"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Real-Estate Consultant"], ["description", "Deserunt velit nostrum. Sit cumque repellat. Ut quae aut."], ["created_at", "2019-01-30 21:53:16.431706"], ["updated_at", "2019-01-30 21:53:16.431706"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (38.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.4ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Government Officer"], ["description", "Est nisi debitis. A esse aut. Quae aspernatur voluptatem."], ["created_at", "2019-01-30 21:53:16.487422"], ["updated_at", "2019-01-30 21:53:16.487422"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (4.3ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Accounting Technician"], ["description", "Qui ut nam. Esse harum rem. Et iure aperiam."], ["created_at", "2019-01-30 21:53:16.543990"], ["updated_at", "2019-01-30 21:53:16.543990"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Principal Advertising Orchestrator"], ["description", "Ducimus inventore adipisci. Non saepe nostrum. Et ut voluptatibus."], ["created_at", "2019-01-30 21:53:16.600973"], ["updated_at", "2019-01-30 21:53:16.600973"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Healthcare Director"], ["description", "Ad quia voluptatum. Est et omnis. Dolor et quidem."], ["created_at", "2019-01-30 21:53:16.657805"], ["updated_at", "2019-01-30 21:53:16.657805"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "IT Agent"], ["description", "Odio voluptatem itaque. Repellat sit quis. Nemo iure ducimus."], ["created_at", "2019-01-30 21:53:16.715627"], ["updated_at", "2019-01-30 21:53:16.715627"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (64.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Direct Manager"], ["description", "Voluptates labore suscipit. Ut unde dolor. Quia animi voluptatum."], ["created_at", "2019-01-30 21:53:16.793019"], ["updated_at", "2019-01-30 21:53:16.793019"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "District Administration Designer"], ["description", "Cumque consequatur ad. Et praesentium modi. Eum error et."], ["created_at", "2019-01-30 21:53:16.849402"], ["updated_at", "2019-01-30 21:53:16.849402"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Hospitality Agent"], ["description", "Ut blanditiis aliquam. Commodi architecto dolorum. Enim corporis nam."], ["created_at", "2019-01-30 21:53:16.927030"], ["updated_at", "2019-01-30 21:53:16.927030"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Forward Manufacturing Planner"], ["description", "Atque voluptate reiciendis. Omnis praesentium dignissimos. Id voluptatem et."], ["created_at", "2019-01-30 21:53:16.987822"], ["updated_at", "2019-01-30 21:53:16.987822"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Marketing Producer"], ["description", "Maxime est temporibus. Ad corrupti est. Est aspernatur assumenda."], ["created_at", "2019-01-30 21:53:17.062925"], ["updated_at", "2019-01-30 21:53:17.062925"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Product Mining Coordinator"], ["description", "Commodi sed beatae. Aliquid reiciendis est. Quos minima id."], ["created_at", "2019-01-30 21:53:17.119227"], ["updated_at", "2019-01-30 21:53:17.119227"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Product Advertising Architect"], ["description", "Ut consequatur commodi. Est impedit amet. Porro blanditiis aut."], ["created_at", "2019-01-30 21:53:17.177329"], ["updated_at", "2019-01-30 21:53:17.177329"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Direct Marketing Orchestrator"], ["description", "Impedit quasi quibusdam. Quo ut sit. Ipsam ex sit."], ["created_at", "2019-01-30 21:53:17.230699"], ["updated_at", "2019-01-30 21:53:17.230699"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Advertising Administrator"], ["description", "Quibusdam error laborum. Nihil voluptatem repellendus. Unde aspernatur dolor."], ["created_at", "2019-01-30 21:53:17.289824"], ["updated_at", "2019-01-30 21:53:17.289824"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (80.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Farming Liaison"], ["description", "Animi velit molestias. Excepturi est expedita. Beatae enim ea."], ["created_at", "2019-01-30 21:53:17.379055"], ["updated_at", "2019-01-30 21:53:17.379055"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Healthcare Planner"], ["description", "Deserunt enim adipisci. Dolore eius corrupti. Porro quos cumque."], ["created_at", "2019-01-30 21:53:17.439343"], ["updated_at", "2019-01-30 21:53:17.439343"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Investor Farming Strategist"], ["description", "Explicabo delectus cum. Doloremque quam ex. Vel at ut."], ["created_at", "2019-01-30 21:53:17.517782"], ["updated_at", "2019-01-30 21:53:17.517782"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "District Designer"], ["description", "Ipsa quibusdam corrupti. Qui exercitationem voluptatibus. Deserunt dignissimos corporis."], ["created_at", "2019-01-30 21:53:17.574023"], ["updated_at", "2019-01-30 21:53:17.574023"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Customer IT Technician"], ["description", "Ab voluptas animi. Aut sed cupiditate. Asperiores omnis nam."], ["created_at", "2019-01-30 21:53:17.630063"], ["updated_at", "2019-01-30 21:53:17.630063"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (158.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Construction Specialist"], ["description", "Voluptas sed dolores. Et qui dolorem. Quisquam voluptate quos."], ["created_at", "2019-01-30 21:53:17.797275"], ["updated_at", "2019-01-30 21:53:17.797275"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (69.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Corporate Administration Agent"], ["description", "Esse optio tenetur. Quas enim atque. Aut laboriosam non."], ["created_at", "2019-01-30 21:53:17.877361"], ["updated_at", "2019-01-30 21:53:17.877361"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (41.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hospitality Liaison"], ["description", "Modi amet quam. Et officiis alias. Modi esse quia."], ["created_at", "2019-01-30 21:53:17.933171"], ["updated_at", "2019-01-30 21:53:17.933171"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (67.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Legal Orchestrator"], ["description", "Expedita dolorem asperiores. Placeat labore voluptate. Dolorum et sed."], ["created_at", "2019-01-30 21:53:18.010929"], ["updated_at", "2019-01-30 21:53:18.010929"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (71.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Farming Analyst"], ["description", "Cumque esse perspiciatis. Voluptatem porro deleniti. Nam enim non."], ["created_at", "2019-01-30 21:53:18.092247"], ["updated_at", "2019-01-30 21:53:18.092247"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Education Administrator"], ["description", "Quam itaque consequatur. Porro et quia. Et numquam voluptas."], ["created_at", "2019-01-30 21:53:18.147476"], ["updated_at", "2019-01-30 21:53:18.147476"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (48.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "International Marketing Engineer"], ["description", "Aperiam ab necessitatibus. Quos ab facere. Eos possimus impedit."], ["created_at", "2019-01-30 21:53:18.205862"], ["updated_at", "2019-01-30 21:53:18.205862"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Sales Planner"], ["description", "Dignissimos quo dolorum. Saepe maxime minus. Porro mollitia qui."], ["created_at", "2019-01-30 21:53:18.261023"], ["updated_at", "2019-01-30 21:53:18.261023"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (72.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Designer"], ["description", "Suscipit explicabo expedita. Quo possimus aut. Ab enim et."], ["created_at", "2019-01-30 21:53:18.342236"], ["updated_at", "2019-01-30 21:53:18.342236"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Advertising Developer"], ["description", "Porro nesciunt repudiandae. Harum iste et. Voluptatem porro placeat."], ["created_at", "2019-01-30 21:53:18.395892"], ["updated_at", "2019-01-30 21:53:18.395892"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Sales Executive"], ["description", "Tenetur iusto eveniet. Explicabo ea minus. Aut ducimus iure."], ["created_at", "2019-01-30 21:53:18.477119"], ["updated_at", "2019-01-30 21:53:18.477119"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Investor Healthcare Designer"], ["description", "Nostrum non veniam. Velit sit iste. Tempora numquam veniam."], ["created_at", "2019-01-30 21:53:18.555626"], ["updated_at", "2019-01-30 21:53:18.555626"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (47.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Technology Orchestrator"], ["description", "Dolorum neque totam. Minima voluptate inventore. Earum quia sunt."], ["created_at", "2019-01-30 21:53:18.612905"], ["updated_at", "2019-01-30 21:53:18.612905"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Customer Coordinator"], ["description", "Perspiciatis repudiandae quia. Et omnis consequatur. Explicabo error doloribus."], ["created_at", "2019-01-30 21:53:18.667296"], ["updated_at", "2019-01-30 21:53:18.667296"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (3.1ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Central Administration Planner"], ["description", "Quo cum expedita. Temporibus ea architecto. Aperiam consequatur sint."], ["created_at", "2019-01-30 21:53:18.748165"], ["updated_at", "2019-01-30 21:53:18.748165"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.3ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Investor Marketing Associate"], ["description", "Et sunt quia. Optio in quo. Asperiores vel tenetur."], ["created_at", "2019-01-30 21:53:18.806198"], ["updated_at", "2019-01-30 21:53:18.806198"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Consulting Planner"], ["description", "Animi dolores minima. Cum quia odio. Doloribus unde harum."], ["created_at", "2019-01-30 21:53:18.864119"], ["updated_at", "2019-01-30 21:53:18.864119"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Corporate Design Director"], ["description", "Aliquam inventore mollitia. In expedita facere. Voluptas inventore possimus."], ["created_at", "2019-01-30 21:53:18.941230"], ["updated_at", "2019-01-30 21:53:18.941230"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (274.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "International Hospitality Technician"], ["description", "Qui voluptatem est. Excepturi eligendi non. Odit cum nemo."], ["created_at", "2019-01-30 21:53:19.223748"], ["updated_at", "2019-01-30 21:53:19.223748"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Retail Agent"], ["description", "Animi omnis similique. Repellendus ut cum. Esse officiis sit."], ["created_at", "2019-01-30 21:53:19.300431"], ["updated_at", "2019-01-30 21:53:19.300431"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (67.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Product Accounting Liaison"], ["description", "Assumenda provident fugit. Autem aut molestiae. Nihil voluptate hic."], ["created_at", "2019-01-30 21:53:19.381495"], ["updated_at", "2019-01-30 21:53:19.381495"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Manufacturing Associate"], ["description", "Aut veniam deserunt. Aut rem facere. Natus nihil quia."], ["created_at", "2019-01-30 21:53:19.438682"], ["updated_at", "2019-01-30 21:53:19.438682"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (58.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Legal Manager"], ["description", "Exercitationem tempora mollitia. Velit ducimus numquam. Harum deserunt voluptatum."], ["created_at", "2019-01-30 21:53:19.507168"], ["updated_at", "2019-01-30 21:53:19.507168"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Consulting Representative"], ["description", "Reiciendis suscipit iure. Et neque exercitationem. Est rerum et."], ["created_at", "2019-01-30 21:53:19.563856"], ["updated_at", "2019-01-30 21:53:19.563856"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (71.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Healthcare Specialist"], ["description", "Delectus eos quia. Ab nihil earum. Sed nihil est."], ["created_at", "2019-01-30 21:53:19.643944"], ["updated_at", "2019-01-30 21:53:19.643944"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (169.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (3.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lead Sales Associate"], ["description", "Molestias voluptatibus deleniti. Sint expedita dicta. Totam sapiente exercitationem."], ["created_at", "2019-01-30 21:53:19.821798"], ["updated_at", "2019-01-30 21:53:19.821798"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lead Sales Designer"], ["description", "Temporibus modi ut. Ipsam labore omnis. Eaque temporibus aut."], ["created_at", "2019-01-30 21:53:19.887836"], ["updated_at", "2019-01-30 21:53:19.887836"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.2ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Human Community-Services Director"], ["description", "Voluptatem unde voluptas. Vel placeat libero. Laudantium sint nam."], ["created_at", "2019-01-30 21:53:19.967666"], ["updated_at", "2019-01-30 21:53:19.967666"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (70.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hospitality Officer"], ["description", "In illo temporibus. Tenetur aut vitae. Animi quo incidunt."], ["created_at", "2019-01-30 21:53:20.047970"], ["updated_at", "2019-01-30 21:53:20.047970"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Facilitator"], ["description", "Accusantium ad sequi. Enim corrupti nisi. Fugit totam et."], ["created_at", "2019-01-30 21:53:20.126980"], ["updated_at", "2019-01-30 21:53:20.126980"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Corporate Assistant"], ["description", "Officiis possimus perferendis. Commodi non dolorem. Nam aliquid cum."], ["created_at", "2019-01-30 21:53:20.182074"], ["updated_at", "2019-01-30 21:53:20.182074"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (77.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Technology Orchestrator"], ["description", "Ad cum dolor. Est nesciunt exercitationem. Nihil iusto eum."], ["created_at", "2019-01-30 21:53:20.268237"], ["updated_at", "2019-01-30 21:53:20.268237"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (63.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Associate"], ["description", "Vitae occaecati ut. Dolor quaerat ex. Minima ipsam porro."], ["created_at", "2019-01-30 21:53:20.348113"], ["updated_at", "2019-01-30 21:53:20.348113"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (40.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Chief Administrator"], ["description", "Eius et suscipit. Sed aspernatur aut. Enim et totam."], ["created_at", "2019-01-30 21:53:20.400015"], ["updated_at", "2019-01-30 21:53:20.400015"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Marketing Analyst"], ["description", "Iure sint occaecati. Corporis aperiam vel. Expedita maiores voluptas."], ["created_at", "2019-01-30 21:53:20.490114"], ["updated_at", "2019-01-30 21:53:20.490114"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Marketing Architect"], ["description", "Alias id voluptatibus. Fugiat exercitationem debitis. Sed voluptas voluptatum."], ["created_at", "2019-01-30 21:53:20.569726"], ["updated_at", "2019-01-30 21:53:20.569726"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (4.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Customer Planner"], ["description", "Voluptatem voluptatem quia. Aut est libero. Distinctio sapiente voluptas."], ["created_at", "2019-01-30 21:53:20.623152"], ["updated_at", "2019-01-30 21:53:20.623152"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Human IT Producer"], ["description", "Eveniet sit sunt. Suscipit est quis. Qui est commodi."], ["created_at", "2019-01-30 21:53:20.703331"], ["updated_at", "2019-01-30 21:53:20.703331"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (70.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lead Strategist"], ["description", "Sed ad autem. Non placeat aliquam. Nihil quibusdam necessitatibus."], ["created_at", "2019-01-30 21:53:20.782272"], ["updated_at", "2019-01-30 21:53:20.782272"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Senior Design Orchestrator"], ["description", "Dolore et sed. Odio error aliquam. Est totam dolor."], ["created_at", "2019-01-30 21:53:20.861940"], ["updated_at", "2019-01-30 21:53:20.861940"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Accounting Orchestrator"], ["description", "Et eius quibusdam. Et voluptas iste. Molestiae hic magni."], ["created_at", "2019-01-30 21:53:20.916898"], ["updated_at", "2019-01-30 21:53:20.916898"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Farming Executive"], ["description", "Sed est cupiditate. Assumenda illum officia. Quasi dicta molestias."], ["created_at", "2019-01-30 21:53:20.975654"], ["updated_at", "2019-01-30 21:53:20.975654"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lead Mining Specialist"], ["description", "Doloribus et quae. Sapiente tempora voluptatem. Omnis qui ad."], ["created_at", "2019-01-30 21:53:21.033359"], ["updated_at", "2019-01-30 21:53:21.033359"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Design Strategist"], ["description", "Magnam quia et. Vero vitae aperiam. Voluptatum dolore in."], ["created_at", "2019-01-30 21:53:21.111394"], ["updated_at", "2019-01-30 21:53:21.111394"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Advertising Administrator"], ["description", "Est impedit est. Mollitia corrupti consequatur. Et repudiandae et."], ["created_at", "2019-01-30 21:53:21.167407"], ["updated_at", "2019-01-30 21:53:21.167407"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Administration Strategist"], ["description", "Harum esse magni. Perspiciatis hic tenetur. Molestiae ut ipsum."], ["created_at", "2019-01-30 21:53:21.247094"], ["updated_at", "2019-01-30 21:53:21.247094"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (48.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Legacy Design Administrator"], ["description", "Ipsam veniam ducimus. Eum in suscipit. Deserunt enim dolor."], ["created_at", "2019-01-30 21:53:21.304801"], ["updated_at", "2019-01-30 21:53:21.304801"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Forward Real-Estate Liaison"], ["description", "Eveniet quod iure. Mollitia quia nihil. Temporibus qui ut."], ["created_at", "2019-01-30 21:53:21.360880"], ["updated_at", "2019-01-30 21:53:21.360880"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Associate"], ["description", "Placeat fugiat qui. Minus laborum vel. Rerum sapiente ut."], ["created_at", "2019-01-30 21:53:21.440231"], ["updated_at", "2019-01-30 21:53:21.440231"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (55.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.5ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Product Associate"], ["description", "Quae dolorum qui. Ratione itaque velit. Quis tempora in."], ["created_at", "2019-01-30 21:53:21.506194"], ["updated_at", "2019-01-30 21:53:21.506194"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (156.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hospitality Administrator"], ["description", "Quo et neque. Id quos quo. Laboriosam architecto et."], ["created_at", "2019-01-30 21:53:21.674571"], ["updated_at", "2019-01-30 21:53:21.674571"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (73.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Forward Sales Supervisor"], ["description", "Rerum sapiente illo. Repellat voluptate nihil. Ducimus quo numquam."], ["created_at", "2019-01-30 21:53:21.757188"], ["updated_at", "2019-01-30 21:53:21.757188"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (64.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Legal Strategist"], ["description", "Id ea aut. Nesciunt et quis. Quia provident officia."], ["created_at", "2019-01-30 21:53:21.835833"], ["updated_at", "2019-01-30 21:53:21.835833"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (70.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Liaison"], ["description", "Sapiente voluptatem laudantium. Facere sint repudiandae. Quam temporibus esse."], ["created_at", "2019-01-30 21:53:21.914597"], ["updated_at", "2019-01-30 21:53:21.914597"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (46.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Advertising Technician"], ["description", "Doloribus unde ea. Qui voluptas vero. Et dignissimos voluptatem."], ["created_at", "2019-01-30 21:53:21.969234"], ["updated_at", "2019-01-30 21:53:21.969234"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (73.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Human Supervisor"], ["description", "Sed delectus minus. Tempora odio consequatur. Rerum architecto fugit."], ["created_at", "2019-01-30 21:53:22.049617"], ["updated_at", "2019-01-30 21:53:22.049617"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Strategist"], ["description", "Et voluptate omnis. Qui optio velit. Doloribus ullam consequatur."], ["created_at", "2019-01-30 21:53:22.106199"], ["updated_at", "2019-01-30 21:53:22.106199"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (68.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "International Administration Coordinator"], ["description", "Autem doloremque est. Ut accusantium explicabo. Voluptas dolorem veritatis."], ["created_at", "2019-01-30 21:53:22.184016"], ["updated_at", "2019-01-30 21:53:22.184016"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Government Executive"], ["description", "Eaque dolorem id. Qui perferendis iure. Aut voluptatem aspernatur."], ["created_at", "2019-01-30 21:53:22.240363"], ["updated_at", "2019-01-30 21:53:22.240363"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (67.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Consulting Planner"], ["description", "Voluptatem excepturi doloremque. Aut debitis sed. Suscipit eligendi fugit."], ["created_at", "2019-01-30 21:53:22.319617"], ["updated_at", "2019-01-30 21:53:22.319617"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (49.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Construction Coordinator"], ["description", "Dolores aut fugiat. Tempore dolor est. Fuga voluptas maiores."], ["created_at", "2019-01-30 21:53:22.378830"], ["updated_at", "2019-01-30 21:53:22.378830"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (44.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Community-Services Strategist"], ["description", "Quidem sed eaque. At et ad. Voluptas minus dicta."], ["created_at", "2019-01-30 21:53:22.434318"], ["updated_at", "2019-01-30 21:53:22.434318"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (42.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (2.5ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Real-Estate Technician"], ["description", "Saepe natus itaque. Error et et. Sit qui ut."], ["created_at", "2019-01-30 21:53:22.490905"], ["updated_at", "2019-01-30 21:53:22.490905"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (66.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "National Liaison"], ["description", "Eum exercitationem ut. Aperiam soluta voluptas. Ut iusto ea."], ["created_at", "2019-01-30 21:53:22.570358"], ["updated_at", "2019-01-30 21:53:22.570358"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (70.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "National Assistant"], ["description", "Et et soluta. Autem ut sunt. Quia nisi sequi."], ["created_at", "2019-01-30 21:53:22.650441"], ["updated_at", "2019-01-30 21:53:22.650441"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (43.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Global Orchestrator"], ["description", "Modi velit aperiam. Eligendi sapiente adipisci. Aut odit voluptas."], ["created_at", "2019-01-30 21:53:22.706451"], ["updated_at", "2019-01-30 21:53:22.706451"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (47.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Create (0.6ms)[0m  [1m[32mINSERT INTO "cours" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Future Marketing Planner"], ["description", "Expedita quaerat molestiae. Voluptatem molestiae animi. Reiciendis facilis quasi."], ["created_at", "2019-01-30 21:53:22.762493"], ["updated_at", "2019-01-30 21:53:22.762493"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (45.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCour Load (0.8ms)[0m  [1m[34mSELECT "cours".* FROM "cours"[0m
