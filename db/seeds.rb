@@ -8,6 +8,10 @@
 
 require 'faker'
 
-100.times do
+10.times do
     cour = Cour.create!(title: Faker::Name.title,description: Faker::Lorem.paragraph)
+end
+
+10.times do
+    lecon = Lecon.create!(cour_id: Faker::Number.digit,title: Faker::Name.title,body: Faker::Lorem.paragraph)
 end
