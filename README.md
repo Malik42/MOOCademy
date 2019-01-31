@@ -12,6 +12,8 @@ Tu dois créer une plateforme d'apprentissage en ligne. Il y a plein de cours. C
 
 # Contributeur
 
-```Malik Arhes ; Slack: @Malik```
-```Amine Bouraghda ; Slack: A42```
-```Lorenzo Chahid; Slack: @Lorenzo```
+[Lorenzo Chahid](https://github.com/modeuil) slack pseudo: `@Lorenzo chahid`
+
+[Malik Ahres](https://github.com/Malik42) slack pseudo: `@Malik Ahres`
+
+[Amine Bouraghda](https://github.com/Amine42) slack pseudo: `@A42`
